@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Calculator | C++ Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-icon">∑</span> Area<span>Lab</span></a>
+      <span class="tag">C++ OOP PROJECT</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">GEOMETRY MADE SIMPLE</p>
+          <h1>Calculate area.<br><span>Understand the shape.</span></h1>
+          <p class="intro">A simple, responsive web interface for your C++ function-overloading area calculator.</p>
+          <div class="hero-pills"><span>● Circle</span><span>● Rectangle</span><span>● Triangle</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="shape shape-circle">πr²</div>
+          <div class="shape shape-square">l × w</div>
+          <div class="shape shape-triangle">½bh</div>
+        </div>
+      </section>
+
+      <section class="calculator-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">AREA CALCULATOR</p><h2>Choose a shape</h2></div>
+          <button class="reset-btn" id="resetBtn" type="button">Reset all ↺</button>
+        </div>
+
+        <div class="cards">
+          <article class="calc-card" data-shape="circle">
+            <div class="card-top"><div class="shape-icon circle-icon">◯</div><span class="formula">A = πr²</span></div>
+            <h3>Circle</h3><p class="card-description">Find the area using the radius.</p>
+            <label for="radius">Radius <span>(r)</span></label>
+            <div class="input-wrap"><input id="radius" type="number" min="0" step="any" placeholder="e.g. 5"><span>units</span></div>
+            <button class="calculate-btn" data-calc="circle" type="button">Calculate area <span>→</span></button>
+            <div class="result" id="circleResult" aria-live="polite"><small>RESULT</small><strong>—</strong><span>square units</span></div>
+          </article>
+
+          <article class="calc-card" data-shape="rectangle">
+            <div class="card-top"><div class="shape-icon rectangle-icon">▭</div><span class="formula">A = l × w</span></div>
+            <h3>Rectangle</h3><p class="card-description">Multiply the length by width.</p>
+            <div class="field-row">
+              <div><label for="length">Length <span>(l)</span></label><div class="input-wrap"><input id="length" type="number" min="0" step="any" placeholder="4"></div></div>
+              <div><label for="width">Width <span>(w)</span></label><div class="input-wrap"><input id="width" type="number" min="0" step="any" placeholder="6"></div></div>
+            </div>
+            <button class="calculate-btn" data-calc="rectangle" type="button">Calculate area <span>→</span></button>
+            <div class="result" id="rectangleResult" aria-live="polite"><small>RESULT</small><strong>—</strong><span>square units</span></div>
+          </article>
+
+          <article class="calc-card" data-shape="triangle">
+            <div class="card-top"><div class="shape-icon triangle-icon">△</div><span class="formula">A = ½ × b × h</span></div>
+            <h3>Triangle</h3><p class="card-description">Half the base multiplied by height.</p>
+            <div class="field-row">
+              <div><label for="base">Base <span>(b)</span></label><div class="input-wrap"><input id="base" type="number" min="0" step="any" placeholder="4"></div></div>
+              <div><label for="height">Height <span>(h)</span></label><div class="input-wrap"><input id="height" type="number" min="0" step="any" placeholder="6"></div></div>
+            </div>
+            <button class="calculate-btn" data-calc="triangle" type="button">Calculate area <span>→</span></button>
+            <div class="result" id="triangleResult" aria-live="polite"><small>RESULT</small><strong>—</strong><span>square units</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="code-section">
+        <div class="code-heading"><div><p class="eyebrow">YOUR C++ LOGIC</p><h2>Function overloading</h2></div><span class="code-label">C++</span></div>
+        <p class="code-note">The browser uses JavaScript to perform the same calculations. The C++ file is included as the original console program.</p>
+        <pre><code>class calculator {
+public:
+    double calculateArea(double radius) {
+        return 3.1416 * radius * radius;
+    }
+
+    double calculateArea(double length, double width) {
+        return length * width;
+    }
+
+    double calculatearea(double base, double height) {
+        return 0.5 * base * height;
+    }
+};</code></pre>
+      </section>
+    </main>
+    <footer><span>AreaLab</span> <span>HTML · CSS · JavaScript · C++</span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
